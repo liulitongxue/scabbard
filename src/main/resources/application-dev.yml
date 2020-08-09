@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://127.0.0.1:3306/scabbard
+    username: root
+    password: root
