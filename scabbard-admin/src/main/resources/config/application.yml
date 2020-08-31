@@ -1,0 +1,8 @@
+server:
+  port: 21301
+
+spring:
+  application:
+    name: scabbard
+  profiles:
+    active: '@spring.profiles.active@'
