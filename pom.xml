@@ -19,6 +19,17 @@
     <url>http://www.acottage.org/scabbard</url>
     <description>SpringBoot版项目脚手架</description>
 
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://gitee.com/liulitongxue/scabbard</url>
+    </scm>
+
     <developers>
         <developer>
             <name>刘立</name>
@@ -39,7 +50,15 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.11</java.version>
         <mysql.version>8.0.18</mysql.version>
-        <mybatis-plus.version>3.4.0</mybatis-plus.version>
+        <mybatisplus.version>3.4.0</mybatisplus.version>
+<!--        <lang3.version>3.8.1</lang3.version>-->
+<!--        <io.version>2.7</io.version>-->
+<!--        <fileupload.version>1.4</fileupload.version>-->
+<!--        <gson.version>2.8.6</gson.version>-->
+<!--        <guava.version>28.1-jre</guava.version>-->
+<!--        <hutool.version>5.3.10</hutool.version>-->
+<!--        <swagger.version>3.0.0</swagger.version>-->
+<!--        <kaptche.version>2.3.2</kaptche.version>-->
     </properties>
 
     <dependencyManagement>
@@ -48,7 +67,7 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis-plus.version}</version>
+                <version>${mybatisplus.version}</version>
             </dependency>
             <!-- mysql驱动 -->
             <dependency>
@@ -56,6 +75,23 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+<!--            &lt;!&ndash; swagger &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>io.springfox</groupId>-->
+<!--                <artifactId>springfox-swagger2</artifactId>-->
+<!--                <version>${swagger.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>io.springfox</groupId>-->
+<!--                <artifactId>springfox-swagger-ui</artifactId>-->
+<!--                <version>${swagger.version}</version>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; kaptcha验证码 &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>com.github.penggle</groupId>-->
+<!--                <artifactId>kaptcha</artifactId>-->
+<!--                <version>${kaptche.version}</version>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
@@ -67,6 +103,46 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+<!--        &lt;!&ndash; 热部署 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash;常用工具类 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.commons</groupId>-->
+<!--            <artifactId>commons-lang3</artifactId>-->
+<!--            <version>${lang3.version}</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash;io常用工具类 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>commons-io</groupId>-->
+<!--            <artifactId>commons-io</artifactId>-->
+<!--            <version>${io.version}</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash;文件上传工具类 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>commons-fileupload</groupId>-->
+<!--            <artifactId>commons-fileupload</artifactId>-->
+<!--            <version>${fileupload.version}</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; gson &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.code.gson</groupId>-->
+<!--            <artifactId>gson</artifactId>-->
+<!--            <version>${gson.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.guava</groupId>-->
+<!--            <artifactId>guava</artifactId>-->
+<!--            <version>${guava.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>cn.hutool</groupId>-->
+<!--            <artifactId>hutool-all</artifactId>-->
+<!--            <version>${hutool.version}</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <profiles>
@@ -115,6 +191,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--忽略测试启动类 -->
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
         </plugins>
         <!-- 指定配置文件路径 -->
