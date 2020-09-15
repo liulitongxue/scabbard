@@ -2,7 +2,7 @@ package org.acottage.scabbard.core.service.impl;
 
 import org.acottage.scabbard.core.common.constant.ParamConst;
 import org.acottage.scabbard.core.entity.TestMyBatis;
-import org.acottage.scabbard.core.dao.TestMyBatisMapper;
+import org.acottage.scabbard.core.mapper.TestMyBatisMapper;
 import org.acottage.scabbard.core.service.TestMyBatisService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;

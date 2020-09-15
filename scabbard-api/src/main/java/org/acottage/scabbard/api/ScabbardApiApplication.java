@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * @Version 1.0
  */
 @SpringBootApplication(scanBasePackages = "org.acottage.scabbard")
-@MapperScan("org.acottage.scabbard")
+@MapperScan("org.acottage.scabbard.core.mapper")
 @EnableAsync
 public class ScabbardApiApplication {
 
