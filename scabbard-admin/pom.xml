@@ -11,7 +11,6 @@
 
     <artifactId>scabbard-admin</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>com.acottage</groupId>

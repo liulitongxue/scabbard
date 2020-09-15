@@ -1,9 +1,3 @@
 spring:
-  datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://127.0.0.1:3306/scabbard?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=Hongkong
-    username: root
-    password: root
-    hikari:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      maximum-pool-size: 100
+  profiles:
+    include: [core-dev]

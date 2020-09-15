@@ -12,10 +12,15 @@
     <artifactId>scabbard-core</artifactId>
 
     <dependencies>
-        <!-- MyBatisPlus -->
+        <!-- SpringBoot starter -->
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!-- SpringBoot 集成mybatis框架 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
         <!-- mysql驱动 -->
         <dependency>
@@ -24,4 +29,31 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- mybatis-generator插件 -->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>${mybatis.version}</version>
+                <configuration>
+                    <!--允许移动生成的文件 -->
+                    <verbose>false</verbose>
+                    <!--允许覆盖生成的文件 -->
+                    <overwrite>false</overwrite>
+                    <!--配置文件的路径 -->
+                    <configurationFile>src/main/resources/generator/generatorConfig.xml</configurationFile>
+                </configuration>
+                <dependencies>
+                    <!-- mysql驱动 -->
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>${mysql.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 </project>
