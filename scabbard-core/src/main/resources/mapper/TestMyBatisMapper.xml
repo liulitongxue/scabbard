@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.acottage.scabbard.core.dao.TestMyBatisMapper">
+    <resultMap id="BaseResultMap" type="org.acottage.scabbard.core.entity.TestMyBatis">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="is_del" jdbcType="BIT" property="del"/>
+    </resultMap>
+
+    <sql id="baseSelect" >
+        id,`name`,is_del,update_time,create_time
+    </sql>
+
+    <insert id="insertTestMybatis" parameterType="org.acottage.scabbard.core.entity.TestMyBatis">
+        insert into test_my_batis (id,`name`,is_del,update_time,create_time) values (#{id},#{name},#{del},#{updateTime},#{createTime})
+    </insert>
+
+</mapper>

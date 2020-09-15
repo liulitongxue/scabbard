@@ -3,6 +3,6 @@ server:
 
 spring:
   application:
-    name: scabbard
+    name: scabbard-api
   profiles:
     active: '@spring.profiles.active@'

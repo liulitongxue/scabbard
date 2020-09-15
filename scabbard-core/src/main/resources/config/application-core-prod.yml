@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    include: [core]
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://127.0.0.1:3306/scabbard?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=Hongkong
