@@ -217,13 +217,13 @@
                     <include>application-core-${spring.profiles.active}.yml</include>
                 </includes>
             </resource>
-<!--            <resource>-->
-<!--                <directory>src/main/resources/mapper</directory>-->
-<!--                <filtering>false</filtering>-->
-<!--                <includes>-->
-<!--                    <include>*.xml</include>-->
-<!--                </includes>-->
-<!--            </resource>-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
         </resources>
     </build>
 

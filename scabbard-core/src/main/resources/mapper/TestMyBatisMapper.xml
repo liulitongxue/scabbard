@@ -13,7 +13,10 @@
         id,`name`,is_del,update_time,create_time
     </sql>
 
-    <insert id="insertTestMybatis" parameterType="org.acottage.scabbard.core.entity.TestMyBatis">
+    <insert id="insertTestMybatis" parameterType="org.acottage.scabbard.core.entity.TestMyBatis" useGeneratedKeys="true" keyProperty="id">
+<!--        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">-->
+<!--            SELECT LAST_INSERT_ID()-->
+<!--        </selectKey>-->
         insert into test_my_batis (id,`name`,is_del,update_time,create_time) values (#{id},#{name},#{del},#{updateTime},#{createTime})
     </insert>
 

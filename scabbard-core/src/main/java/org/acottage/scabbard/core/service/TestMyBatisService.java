@@ -12,7 +12,7 @@ public interface TestMyBatisService {
      * 测试不使用Mybatis Generator 插入数据
      *
      * @param testMyBatis
-     * @return
+     * @return 插入数据的主键id
      */
     Long insertTestMybatis(TestMyBatis testMyBatis);
 }

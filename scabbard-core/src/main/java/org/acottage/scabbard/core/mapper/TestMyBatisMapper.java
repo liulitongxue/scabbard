@@ -14,7 +14,7 @@ public interface TestMyBatisMapper {
      * 测试不使用MyBatis Generator 插入数据
      *
      * @param testMyBatis
-     * @return
+     * @return 受影响的行数
      */
     Long insertTestMybatis(TestMyBatis testMyBatis);
 }

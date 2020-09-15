@@ -25,9 +25,10 @@ public class TestMyBatisServiceImpl implements TestMyBatisService {
     public Long insertTestMybatis(TestMyBatis testMyBatis) {
         Assert.notNull(testMyBatis, ParamConst.NULL_PARAM);
         testMyBatis.setDel(false);
+        testMyBatis.setUpdateTime(new Date());
         testMyBatis.setInsertTime(new Date());
-        testMyBatis.setInsertTime(new Date());
-        return testMyBatisMapper.insertTestMybatis(testMyBatis);
+        testMyBatisMapper.insertTestMybatis(testMyBatis);
+        return testMyBatis.getId();
     }
 
 }
