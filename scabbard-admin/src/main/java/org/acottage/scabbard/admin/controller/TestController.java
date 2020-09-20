@@ -16,7 +16,7 @@ public class TestController {
 
     @GetMapping()
     public ResponseEntity test() {
-        return ResponseEntity.ok("测试");
+        return ResponseEntity.ok("测试"+"\n"+"测试devtools");
     }
 
 }
