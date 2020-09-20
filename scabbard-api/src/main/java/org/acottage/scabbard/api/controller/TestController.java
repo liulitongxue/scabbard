@@ -1,4 +1,4 @@
-package org.acottage.scabbard.admin.controller;
+package org.acottage.scabbard.api.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Version 1.0
  */
 @Controller
-@RequestMapping("/admin/test")
+@RequestMapping("/api/test")
 @Api(value="测试接口",tags = "接口信息")
 public class TestController {
 

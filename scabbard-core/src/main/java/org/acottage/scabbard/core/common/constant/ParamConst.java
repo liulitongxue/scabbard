@@ -6,9 +6,8 @@ package org.acottage.scabbard.core.common.constant;
  * @Version 1.0
  */
 public class ParamConst {
+
     public static final String NULL_PARAM = "无效的参数";
-
-
 
     public ParamConst() {
 

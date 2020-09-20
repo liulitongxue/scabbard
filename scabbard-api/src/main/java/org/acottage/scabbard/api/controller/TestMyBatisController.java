@@ -1,4 +1,4 @@
-package org.acottage.scabbard.admin.controller;
+package org.acottage.scabbard.api.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * @Version 1.0
  */
 @Controller
-@RequestMapping("/admin/test/my/batis")
+@RequestMapping("/api/test/my/batis")
 @Api(value="测试接口",tags = "接口信息")
 public class TestMyBatisController {
 

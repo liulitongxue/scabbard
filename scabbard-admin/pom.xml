@@ -27,19 +27,5 @@
 <!--            <groupId>org.springframework.boot</groupId>-->
 <!--            <artifactId>spring-boot-starter-freemarker</artifactId>-->
 <!--        </dependency>-->
-<!--        &lt;!&ndash; swagger &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.springfox</groupId>-->
-<!--            <artifactId>springfox-swagger2</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.springfox</groupId>-->
-<!--            <artifactId>springfox-swagger-ui</artifactId>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; kaptcha验证码 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.github.penggle</groupId>-->
-<!--            <artifactId>kaptcha</artifactId>-->
-<!--        </dependency>-->
     </dependencies>
 </project>
