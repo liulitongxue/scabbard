@@ -1,6 +1,5 @@
 package org.acottage.scabbard.core.common.runner;
 
-import cn.hutool.core.date.DateUtil;
 import org.acottage.scabbard.core.common.constant.DateConst;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +8,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -27,8 +27,10 @@ public class ScabbardApplicationRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        LOGGER.info("程序部署完成，当前时间：" + DateUtil.format(new Date(), DateConst.YYYY_MM_DD_HH_MM_SS_EN));
-        LOGGER.info("服务地址 ：http://localhost:" + port);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String currentTime = sdf.format(new Date());
+        LOGGER.info("程序部署完成，当前时间：{}", currentTime);
+        LOGGER.info("服务地址 ：http://localhost:{}", port);
     }
 
 }
