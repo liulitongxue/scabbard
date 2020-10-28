@@ -6,3 +6,4 @@ spring:
     name: scabbard-admin
   profiles:
     active: '@spring.profiles.active@'
+
