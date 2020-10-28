@@ -59,6 +59,7 @@
         <hutool.version>5.3.10</hutool.version>
         <swagger.version>2.9.0</swagger.version>
         <kaptche.version>2.3.2</kaptche.version>
+        <druid.version>1.2.1</druid.version>
     </properties>
 
     <dependencyManagement>
@@ -75,6 +76,13 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
