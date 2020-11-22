@@ -238,6 +238,9 @@
                 <filtering>false</filtering>
                 <includes>
                     <include>**/*.xml</include>
+                    <include>**/*.css</include>
+                    <include>**/*.js</include>
+                    <include>**/*.html</include>
                 </includes>
             </resource>
         </resources>

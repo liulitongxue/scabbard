@@ -27,9 +27,4 @@ public class AdminGlobalExceptionHandler {
         return mav;
     }
 
-    @ExceptionHandler(value = AdminGlobalException.class)
-    public String adminDefaultErrorHandler() {
-        return "redirect:" + DEFAULT_ERROR_VIEW;
-//        return DEFAULT_ERROR_VIEW;
-    }
 }

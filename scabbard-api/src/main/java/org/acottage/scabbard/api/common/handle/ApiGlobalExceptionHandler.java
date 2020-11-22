@@ -14,14 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 @ControllerAdvice
 public class ApiGlobalExceptionHandler {
 
-    private static final String DEFAULT_ERROR_VIEW = "/page/error";
+    private static final String DEFAULT_ERROR_VIEW = "/page/error.html";
 
     @ExceptionHandler(value = Exception.class)
-    public ModelAndView defaultErrorHandler(HttpServletRequest req, Exception e) {
-        ModelAndView mav = new ModelAndView();
-        mav.addObject("exception", e);
-        mav.addObject("url", req.getRequestURL());
-        mav.setViewName(DEFAULT_ERROR_VIEW);
-        return mav;
+    public String defaultErrorHandler(HttpServletRequest req, Exception e) {
+        return "redirect:" + DEFAULT_ERROR_VIEW;
     }
 }

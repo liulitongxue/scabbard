@@ -9,4 +9,4 @@ spring:
   mvc:
     static-path-pattern: /**
   resources:
-    static-locations: classpath:/templates/,classpath:/static/
+    static-locations: classpath:/public/,classpath:/templates/
