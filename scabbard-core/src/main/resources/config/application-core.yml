@@ -7,8 +7,8 @@ spring:
       enabled: true
       #设置重启的目录
       additional-paths: src/main/java
-      #classpath目录下的WEB-INF文件夹内容修改不重启
-      exclude: WEB-INF/**
+      #classpath目录下的内容修改不重启
+      exclude: /**
 management:
   # 端点信息接口使用的端口，为了和主系统接口使用的端口进行分离
   server:
@@ -23,3 +23,5 @@ management:
     web:
       exposure:
         include: '*'
+swagger:
+  show: true

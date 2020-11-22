@@ -6,4 +6,7 @@ spring:
     name: scabbard-admin
   profiles:
     active: '@spring.profiles.active@'
-
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/

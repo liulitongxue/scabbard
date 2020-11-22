@@ -17,7 +17,7 @@ spring:
         url-pattern: /druid/*
         login-username: root
         login-password: root
-      filters : stat
+      filters: stat
   redis:
     # Redis服务器地址
     host: 127.0.0.1
@@ -38,8 +38,6 @@ spring:
         max-idle: 8
         # 连接池中的最小空闲连接
         min-idle: 0
-swagger:
-  show: true
 logging:
   level:
     org.acottage.scabbard: debug
