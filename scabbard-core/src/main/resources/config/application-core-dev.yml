@@ -40,3 +40,6 @@ spring:
         min-idle: 0
 swagger:
   show: true
+logging:
+  level:
+    org.acottage.scabbard: debug
