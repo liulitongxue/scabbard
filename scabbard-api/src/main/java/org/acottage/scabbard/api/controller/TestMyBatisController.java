@@ -28,8 +28,8 @@ public class TestMyBatisController {
 
     @PostMapping("/insert")
     @ApiOperation(value="测试myBatis",tags = "测试myBatis")
-    public ResponseEntity insertTestMybatis(@RequestBody TestMyBatis testMyBatis) {
-        return ResponseEntity.ok("插入数据的id为：" + testMyBatisService.insertTestMybatis(testMyBatis));
+    public ResponseEntity insert(@RequestBody TestMyBatis testMyBatis) {
+        return ResponseEntity.ok("插入数据的id为：" + testMyBatisService.insert(testMyBatis));
     }
 
 }

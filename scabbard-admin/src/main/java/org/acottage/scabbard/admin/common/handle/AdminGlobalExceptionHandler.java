@@ -1,7 +1,5 @@
 package org.acottage.scabbard.admin.common.handle;
 
-import org.acottage.scabbard.admin.common.exception.AdminGlobalException;
-import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;

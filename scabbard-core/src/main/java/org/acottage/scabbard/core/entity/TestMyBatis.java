@@ -9,6 +9,7 @@ import java.util.Date;
  * @Version 1.0
  */
 public class TestMyBatis implements Serializable {
+
     private Long id;
     private String name;
     private Boolean del;

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author liuli
@@ -32,10 +33,31 @@ public class TestMyBatisController {
 
     @PostMapping("/insert")
     @ApiOperation(value="测试myBatis",tags = "测试myBatis")
-    public ResponseEntity insertTestMybatis(@RequestBody TestMyBatis testMyBatis) {
+    public ResponseEntity insert(@RequestBody TestMyBatis testMyBatis) {
         long time = System.currentTimeMillis();
         logger.debug(String.valueOf(time));
-        return ResponseEntity.ok("插入数据的id为：" + testMyBatisService.insertTestMybatis(testMyBatis));
+        return ResponseEntity.ok("插入数据的id为：" + testMyBatisService.insert(testMyBatis));
     }
+
+    @PostMapping("/insertList")
+    @ApiOperation(value="测试批量插入",tags = "测试批量插入")
+    public ResponseEntity insertList(@RequestBody List<TestMyBatis> testMyBatisList) {
+        long time = System.currentTimeMillis();
+        logger.debug(String.valueOf(time));
+        return ResponseEntity.ok("插入数据的数量为：" + testMyBatisService.insertList(testMyBatisList));
+    }
+
+    @PostMapping("/insertTransactional")
+    @ApiOperation(value="测试事务注解",tags = "测试事务注解")
+    public ResponseEntity insertTransactional() {
+        long time = System.currentTimeMillis();
+        logger.debug(String.valueOf(time));
+        int i = testMyBatisService.insertTransactional();
+        if (i==1){
+            return ResponseEntity.ok("插入数据成功");
+        }
+        return ResponseEntity.ok("插入数据失败");
+    }
+
 
 }
