@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/api/test/exception/handle")
 @Api(value = "测试接口", tags = "接口信息")
-public class TestExceptionHandle {
-    private static final Logger logger = LoggerFactory.getLogger(TestExceptionHandle.class);
+public class TestExceptionHandleController {
+    private static final Logger logger = LoggerFactory.getLogger(TestExceptionHandleController.class);
 
     @GetMapping()
     @ApiOperation(value = "测试全局统一异常处理", tags = "测试全局统一异常处理")
@@ -29,7 +29,7 @@ public class TestExceptionHandle {
         try {
             double i = 1 / 0;
         } catch (Exception e) {
-//            e.printStackTrace();
+            logger.error("接口错误：",e);
             throw new ApiGlobalException("400", "页面发生错误");
         }
         return ResponseEntity.ok("测试" + "\n" + "测试全局统一异常处理");
