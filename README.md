@@ -1,3 +1,3 @@
-# SpringBoot项目脚手架  
+# SpringBoot项目练习
 
-构建SpringBoot项目所需的基本配置  
+构建SpringBoot项目练习 
