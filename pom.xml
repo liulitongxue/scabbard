@@ -51,6 +51,7 @@
         <java.version>11</java.version>
         <mysql.version>8.0.18</mysql.version>
         <mybatis.version>1.3.2</mybatis.version>
+        <druid.version>1.2.1</druid.version>
         <!--        <lang3.version>3.8.1</lang3.version>-->
         <!--        <io.version>2.7</io.version>-->
         <!--        <fileupload.version>1.4</fileupload.version>-->
@@ -58,23 +59,23 @@
         <guava.version>28.1-jre</guava.version>
         <hutool.version>5.3.10</hutool.version>
         <swagger.version>2.9.0</swagger.version>
+        <knife4j.version>2.0.9</knife4j.version>
         <kaptche.version>2.3.2</kaptche.version>
-        <druid.version>1.2.1</druid.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- SpringBoot 集成mybatis框架 -->
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.version}</version>
-            </dependency>
             <!-- mysql驱动 -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
+            </dependency>
+            <!-- SpringBoot 集成mybatis框架 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
             <dependency>
@@ -140,6 +141,7 @@
 <!--            <version>${hutool.version}</version>-->
 <!--        </dependency>-->
         <!-- swagger -->
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
@@ -150,7 +152,15 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger.version}</version>
         </dependency>
-<!--            &lt;!&ndash; kaptcha验证码 &ndash;&gt;-->
+        <!-- https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-spring-boot-starter -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>${knife4j.version}</version>
+        </dependency>
+
+
+        <!--            &lt;!&ndash; kaptcha验证码 &ndash;&gt;-->
 <!--            <dependency>-->
 <!--                <groupId>com.github.penggle</groupId>-->
 <!--                <artifactId>kaptcha</artifactId>-->
@@ -245,5 +255,36 @@
             </resource>
         </resources>
     </build>
+
+    <repositories>
+        <repository>
+            <id>maven-aliyun</id>
+            <name>amaven aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <layout>default</layout>
+            <!-- 是否开启发布版构件下载 -->
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <!-- 是否开启快照版构件下载 -->
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>maven-aliyun</id>
+            <name>amaven aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <layout>default</layout>
+            <!-- 是否开启发布版构件下载 -->
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <!-- 是否开启快照版构件下载 -->
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>

@@ -10,6 +10,7 @@ import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -26,7 +27,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    @Value("${swagger.show}")
+    @Value("${swagger.show:true}")
     private boolean swaggerShow;
 
     /**
@@ -59,24 +60,32 @@ public class SwaggerConfig {
                 .title("API 文档 ")
                 .version("1.0")
                 // 描述
-                .description("API 文档").build();
+                .description("API 文档")
+                .contact(new Contact("Powered By liulitongxue", "https://www.acottage.com/", "liulitongxue@126.com"))
+                .termsOfServiceUrl("https://www.acottage.com/")
+                .build();
     }
 
     /**
-     * 重写basePackage方法，使能够实现多包访问，复制贴上去
+     * 声明基础包
      *
-     * @param
-     * @return com.google.common.base.Predicate<springfox.documentation.RequestHandler>
-     * @author liuzhiqiang
-     * @date 2019/3/26
+     * @param basePackage 基础包路径
+     * @return
      */
+    @SuppressWarnings("all")
     private static Predicate<RequestHandler> basePackage(final String basePackage) {
         return input -> declaringClass(input).transform(handlerPackage(basePackage)).or(true);
     }
 
+    /**
+     * 校验基础包
+     *
+     * @param basePackage 基础包路径
+     * @return
+     */
+    @SuppressWarnings("all")
     private static Function<Class<?>, Boolean> handlerPackage(final String basePackage) {
         return input -> {
-            // 循环判断匹配
             for (String strPackage : basePackage.split(DELIMITER)) {
                 boolean isMatch = input.getPackage().getName().startsWith(strPackage);
                 if (isMatch) {
@@ -87,14 +96,15 @@ public class SwaggerConfig {
         };
     }
 
-    private static Optional<? extends Class<?>> declaringClass(RequestHandler input) {
-        return Optional.fromNullable(input.declaringClass());
+    /**
+     * 检验基础包实例
+     *
+     * @param requestHandler 请求处理类
+     * @return
+     */
+    @SuppressWarnings("all")
+    private static Optional<? extends Class<?>> declaringClass(RequestHandler requestHandler) {
+        return Optional.fromNullable(requestHandler.declaringClass());
     }
-
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry){
-//        registry.addResourceHandler("/**")
-//                .addResourceLocations("")
-//    }
 
 }
