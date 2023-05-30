@@ -25,7 +25,7 @@ public class TestExceptionHandleController {
 
     @GetMapping()
     @ApiOperation(value = "测试全局统一异常处理", tags = "测试全局统一异常处理")
-    public ResponseEntity test() {
+    public ResponseEntity<String> test() {
 
         try {
             double i = 1 / 0;

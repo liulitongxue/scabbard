@@ -23,7 +23,7 @@ public class TestController {
 
     @GetMapping()
     @ApiOperation(value="测试controller",tags = "测试controller")
-    public ResponseEntity test() {
+    public ResponseEntity<String> test() {
         long time = System.currentTimeMillis();
         logger.debug(String.valueOf(time));
         return ResponseEntity.ok("测试"+"\n"+"测试controller");
@@ -31,7 +31,7 @@ public class TestController {
 
     @GetMapping("/devtools")
     @ApiOperation(value="测试springboot devtools热部署",tags = "测试springboot devtools热部署")
-    public ResponseEntity testDevTools() {
+    public ResponseEntity<String> testDevTools() {
         long time = System.currentTimeMillis();
         logger.debug(String.valueOf(time));
         return ResponseEntity.ok("测试"+"\n"+"测试springboot devtools热部署");

@@ -25,7 +25,7 @@ public class ScabbardApplicationRunner implements ApplicationRunner {
     private int port;
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String currentTime = sdf.format(new Date());
         LOGGER.info("程序部署完成，当前时间：{}", currentTime);

@@ -179,10 +179,10 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <build>
-                <!-- 产生的构件的文件名 -->
-                <finalName>${project.artifactId}</finalName>
-            </build>
+<!--            <build>-->
+<!--                &lt;!&ndash; 产生的构件的文件名 &ndash;&gt;-->
+<!--                <finalName>${project.artifactId}</finalName>-->
+<!--            </build>-->
         </profile>
         <!-- 测试环境 -->
         <profile>
@@ -190,10 +190,10 @@
             <properties>
                 <spring.profiles.active>test</spring.profiles.active>
             </properties>
-            <build>
-                <!-- 产生的构件的文件名 -->
-                <finalName>${project.artifactId}</finalName>
-            </build>
+<!--            <build>-->
+<!--                &lt;!&ndash; 产生的构件的文件名 &ndash;&gt;-->
+<!--                <finalName>${project.artifactId}</finalName>-->
+<!--            </build>-->
         </profile>
         <!-- 生产环境 -->
         <profile>
@@ -211,15 +211,87 @@
     <build>
         <!-- SpringBoot 打包插件 -->
         <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                &lt;!&ndash; 忽略测试启动类 &ndash;&gt;-->
+<!--                <configuration>-->
+<!--                    <skip>true</skip>-->
+<!--                    &lt;!&ndash; devtools 热部署 &ndash;&gt;-->
+<!--                    <fork>true</fork>-->
+<!--                    <addResources>true</addResources>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
+<!--            <plugin>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.7.0</version>-->
+<!--                <configuration>-->
+<!--                    <source>11</source>-->
+<!--                    <target>11</target>-->
+<!--                    <encoding>UTF-8</encoding>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <!-- 忽略测试启动类 -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.5.5</version>
                 <configuration>
-                    <skip>true</skip>
-                    <!-- devtools 热部署 -->
-                    <fork>true</fork>
-                    <addResources>true</addResources>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptors>
+                        <descriptor>doc/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                    <finalName>
+                        scabbard-${project.version}-${git.commit.time}-${git.commit.id.abbrev}
+                    </finalName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>2.2.4</version>
+                <executions>
+                    <execution>
+                        <id>get-the-git-infos</id>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- 使properties扩展到整个maven bulid 周期 Ref: https://github.com/ktoso/maven-git-commit-id-plugin/issues/280 -->
+                    <injectAllReactorProjects>true</injectAllReactorProjects>
+                    <dateFormat>yyyyMMddHHmmss</dateFormat>
+                    <verbose>true</verbose>
+                    <!-- 是否生 git.properties 属性文件 -->
+                    <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                    <!--<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename> -->
+                    <!--git描述配置,可选;由JGit提供实现; -->
+                    <gitDescribe>
+                        <!--是否生成描述属性 -->
+                        <skip>false</skip>
+                        <!--提交操作未发现tag时,仅打印提交操作ID, -->
+                        <always>false</always>
+                        <!--提交操作ID显式字符长度,最大值为:40;默认值:7; 0代表特殊意义;后面有解释; -->
+                        <abbrev>10</abbrev>
+                        <!--构建触发时,代码有修改时(即"dirty state"),添加指定后缀;默认值:""; -->
+                        <dirty>-dirty</dirty>
+                        <!--always print using the "tag-commits_from_tag-g_commit_id-maybe_dirty"
+                            format, even if "on" a tag. The distance will always be 0 if you're "on"
+                            the tag. -->
+                        <forceLongFormat>false</forceLongFormat>
+                    </gitDescribe>
                 </configuration>
             </plugin>
         </plugins>
@@ -257,20 +329,6 @@
     </build>
 
     <repositories>
-        <repository>
-            <id>maven-aliyun</id>
-            <name>amaven aliyun</name>
-            <url>https://maven.aliyun.com/repository/public</url>
-            <layout>default</layout>
-            <!-- 是否开启发布版构件下载 -->
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <!-- 是否开启快照版构件下载 -->
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
         <repository>
             <id>maven-aliyun</id>
             <name>amaven aliyun</name>

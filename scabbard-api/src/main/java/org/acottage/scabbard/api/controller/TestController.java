@@ -19,14 +19,18 @@ public class TestController {
 
     @GetMapping()
     @ApiOperation(value="测试controller",tags = "测试controller")
-    public ResponseEntity test() {
+    public ResponseEntity<String> test() {
         return ResponseEntity.ok("测试"+"\n"+"测试controller");
     }
 
     @GetMapping("/devtools")
     @ApiOperation(value="测试springboot devtools热部署",tags = "测试springboot devtools热部署")
-    public ResponseEntity testDevTools() {
+    public ResponseEntity<String> testDevTools() {
         return ResponseEntity.ok("测试"+"\n"+"测试springboot devtools热部署");
     }
-
+    @GetMapping("/testFiles")
+    @ApiOperation(value="测试controller文件上传",tags = "测试controller文件上传")
+    public ResponseEntity<String> testFiles() {
+        return ResponseEntity.ok("测试"+"\n"+"测试controller文件上传");
+    }
 }

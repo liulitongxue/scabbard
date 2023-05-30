@@ -33,7 +33,7 @@ public class TestMyBatisController {
 
     @PostMapping("/insert")
     @ApiOperation(value="测试myBatis",tags = "测试myBatis")
-    public ResponseEntity insert(@RequestBody TestMyBatis testMyBatis) {
+    public ResponseEntity<String> insert(@RequestBody TestMyBatis testMyBatis) {
         long time = System.currentTimeMillis();
         logger.debug(String.valueOf(time));
         return ResponseEntity.ok("插入数据的id为：" + testMyBatisService.insert(testMyBatis));
@@ -41,7 +41,7 @@ public class TestMyBatisController {
 
     @PostMapping("/insertList")
     @ApiOperation(value="测试批量插入",tags = "测试批量插入")
-    public ResponseEntity insertList(@RequestBody List<TestMyBatis> testMyBatisList) {
+    public ResponseEntity<String> insertList(@RequestBody List<TestMyBatis> testMyBatisList) {
         long time = System.currentTimeMillis();
         logger.debug(String.valueOf(time));
         return ResponseEntity.ok("插入数据的数量为：" + testMyBatisService.insertList(testMyBatisList));
@@ -49,7 +49,7 @@ public class TestMyBatisController {
 
     @PostMapping("/insertTransactional")
     @ApiOperation(value="测试事务注解",tags = "测试事务注解")
-    public ResponseEntity insertTransactional() {
+    public ResponseEntity<String> insertTransactional() {
         long time = System.currentTimeMillis();
         logger.debug(String.valueOf(time));
         int i = testMyBatisService.insertTransactional();
