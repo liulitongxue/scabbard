@@ -25,3 +25,8 @@ management:
         include: '*'
 swagger:
   show: true
+cxf:
+  path: myWebService
+  jaxrs:
+    component-scan: true
+
