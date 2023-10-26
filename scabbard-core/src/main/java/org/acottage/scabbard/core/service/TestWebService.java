@@ -13,11 +13,12 @@ import javax.jws.WebService;
  * @Date 2023/10/24 14:35
  * @Version 1.0
  */
-@WebService(serviceName = "OaService",
-        targetNamespace = "http://demo.autoflow.huichuan.cloudwise.com",
-        endpointInterface = "com.cloudwise.huichuan.autoflow.demo.service.OaService")
+@WebService(serviceName = "TestWebService",
+        targetNamespace = "http://scabbard.acottage.com",
+        endpointInterface = "org.acottage.scabbard.core.service.TestWebService")
 @Service
 public interface TestWebService {
-    @WebMethod(operationName = "OA")
-    @WebResult(name = "result") String OA(@WebParam(name = "param") String param);
+    @WebMethod(operationName = "test",action = "http://scabbard.acottage.com")
+    @WebResult(name = "result")
+    String test(@WebParam(name = "param", targetNamespace = "http://scabbard.acottage.com") String param);
 }
