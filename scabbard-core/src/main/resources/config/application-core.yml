@@ -26,7 +26,7 @@ management:
 swagger:
   show: true
 cxf:
-  path: myWebService
+  path: /acottage
   jaxrs:
     component-scan: true
 
