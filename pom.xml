@@ -215,10 +215,10 @@
             <properties>
                 <spring.profiles.active>prod</spring.profiles.active>
             </properties>
-            <build>
-                <!-- 产生的构件的文件名 -->
-                <finalName>${project.artifactId}</finalName>
-            </build>
+<!--            <build>-->
+<!--                &lt;!&ndash; 产生的构件的文件名 &ndash;&gt;-->
+<!--                <finalName>${project.artifactId}</finalName>-->
+<!--            </build>-->
         </profile>
     </profiles>
 
