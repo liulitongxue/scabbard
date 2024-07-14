@@ -5,12 +5,6 @@ spring:
 #    type: com.zaxxer.hikari.HikariDataSource
 #    hikari:
 #      maximum-pool-size: 100
-
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    url: jdbc:mysql://8.210.153.13:3306/scabbard?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=Hongkong
-#    username: rootdev
-#    password: rootdev
-#    driver-class-name: com.mysql.cj.jdbc.Driver
     druid:
       # StatViewServlet配置。（因为暴露的监控信息比较敏感，支持密码加密和访问ip限定）
       stat-view-servlet:
@@ -19,9 +13,9 @@ spring:
         login-username: root
         login-password: root
       filters: stat
-      url: jdbc:mysql://8.210.153.13:3306/scabbard?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=Hongkong
-      username: rootdev
-      password: rootdev
+      url: jdbc:mysql://127.0.0.1:3306/scabbard?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=Hongkong
+      username: root
+      password: root
   redis:
     # Redis服务器地址
     host: 127.0.0.1
