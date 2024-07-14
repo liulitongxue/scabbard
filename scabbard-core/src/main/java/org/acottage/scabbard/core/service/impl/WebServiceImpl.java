@@ -1,6 +1,6 @@
 package org.acottage.scabbard.core.service.impl;
 
-import org.acottage.scabbard.core.service.TestWebService;
+import org.acottage.scabbard.core.service.WebService;
 import org.springframework.stereotype.Service;
 
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * @Version 1.0
  */
 @Service
-public class TestWebServiceImpl implements TestWebService {
+public class WebServiceImpl implements WebService {
 
     @Override
     public String test(String param) {

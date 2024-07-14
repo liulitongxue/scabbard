@@ -1,6 +1,6 @@
 package org.acottage.scabbard.core.common.config;
 
-import org.acottage.scabbard.core.service.TestWebService;
+import org.acottage.scabbard.core.service.WebService;
 import org.apache.cxf.Bus;
 import org.apache.cxf.jaxws.EndpointImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +22,12 @@ public class CxfConfig {
     private Bus bus;
 
     @Autowired
-    private TestWebService testWebService;
+    private WebService webService;
 
 
     @Bean
     public Endpoint endpoint(){
-        EndpointImpl endpoint =  new EndpointImpl(bus, testWebService);
+        EndpointImpl endpoint =  new EndpointImpl(bus, webService);
         endpoint.publish("/testWebService");
         return endpoint;
     }

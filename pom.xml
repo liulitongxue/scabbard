@@ -63,6 +63,7 @@
         <kaptche.version>2.3.2</kaptche.version>
 <!--        <hutool.version>5.3.10</hutool.version>-->
         <cxf.version>3.5.1</cxf.version>
+        <netty.version>4.1.65.Final</netty.version>
     </properties>
 
     <dependencyManagement>
@@ -91,17 +92,16 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
-            <!-- hutool -->
-<!--            <dependency>-->
-<!--                <groupId>cn.hutool</groupId>-->
-<!--                <artifactId>hutool-all</artifactId>-->
-<!--                <version>${hutool.version}</version>-->
-<!--            </dependency>-->
             <!-- cxf -->
             <dependency>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
                 <version>${cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -143,12 +143,6 @@
 <!--            <groupId>commons-fileupload</groupId>-->
 <!--            <artifactId>commons-fileupload</artifactId>-->
 <!--            <version>${fileupload.version}</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; gson &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.google.code.gson</groupId>-->
-<!--            <artifactId>gson</artifactId>-->
-<!--            <version>${gson.version}</version>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>com.google.guava</groupId>-->
