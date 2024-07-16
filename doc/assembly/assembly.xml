@@ -6,7 +6,7 @@
     <formats>
         <format>tar.gz</format>
     </formats>
-    <baseDirectory>dosmLauncher</baseDirectory>
+    <baseDirectory>scabbard</baseDirectory>
     <includeBaseDirectory>true</includeBaseDirectory>
     <fileSets>
         <fileSet>
@@ -17,7 +17,7 @@
                 <include>LICENSE*</include>
                 <include>NOTICE*</include>
                 <include>service.properties</include>
-                <include>dosmLauncher.yaml</include>
+                <include>scabbard.yaml</include>
             </includes>
         </fileSet>
         <fileSet>
