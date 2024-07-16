@@ -49,7 +49,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
-        <scabbard.version>1.0-SNAPSHOT</scabbard.version>
         <mysql.version>8.0.18</mysql.version>
         <mybatis.version>1.3.2</mybatis.version>
         <druid.version>1.2.1</druid.version>
@@ -61,7 +60,7 @@
         <swagger.version>2.9.0</swagger.version>
         <knife4j.version>2.0.9</knife4j.version>
         <kaptche.version>2.3.2</kaptche.version>
-<!--        <hutool.version>5.3.10</hutool.version>-->
+        <!--        <hutool.version>5.3.10</hutool.version>-->
         <cxf.version>3.5.1</cxf.version>
         <netty.version>4.1.65.Final</netty.version>
     </properties>
@@ -72,7 +71,7 @@
             <dependency>
                 <groupId>com.acottage</groupId>
                 <artifactId>scabbard-core</artifactId>
-                <version>${scabbard.version}</version>
+                <version>${version}</version>
             </dependency>
             <!-- mysql驱动 -->
             <dependency>
@@ -126,34 +125,34 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-<!--        &lt;!&ndash;常用工具类 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.commons</groupId>-->
-<!--            <artifactId>commons-lang3</artifactId>-->
-<!--            <version>${lang3.version}</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash;io常用工具类 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>commons-io</groupId>-->
-<!--            <artifactId>commons-io</artifactId>-->
-<!--            <version>${io.version}</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash;文件上传工具类 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>commons-fileupload</groupId>-->
-<!--            <artifactId>commons-fileupload</artifactId>-->
-<!--            <version>${fileupload.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.google.guava</groupId>-->
-<!--            <artifactId>guava</artifactId>-->
-<!--            <version>${guava.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>cn.hutool</groupId>-->
-<!--            <artifactId>hutool-all</artifactId>-->
-<!--            <version>${hutool.version}</version>-->
-<!--        </dependency>-->
+        <!--        &lt;!&ndash;常用工具类 &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.commons</groupId>-->
+        <!--            <artifactId>commons-lang3</artifactId>-->
+        <!--            <version>${lang3.version}</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash;io常用工具类 &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>commons-io</groupId>-->
+        <!--            <artifactId>commons-io</artifactId>-->
+        <!--            <version>${io.version}</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash;文件上传工具类 &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>commons-fileupload</groupId>-->
+        <!--            <artifactId>commons-fileupload</artifactId>-->
+        <!--            <version>${fileupload.version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.google.guava</groupId>-->
+        <!--            <artifactId>guava</artifactId>-->
+        <!--            <version>${guava.version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>cn.hutool</groupId>-->
+        <!--            <artifactId>hutool-all</artifactId>-->
+        <!--            <version>${hutool.version}</version>-->
+        <!--        </dependency>-->
         <!-- swagger -->
         <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
         <dependency>
@@ -161,11 +160,11 @@
             <artifactId>springfox-swagger2</artifactId>
             <version>${swagger.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.springfox</groupId>-->
-<!--            <artifactId>springfox-swagger-ui</artifactId>-->
-<!--            <version>${swagger.version}</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.springfox</groupId>-->
+        <!--            <artifactId>springfox-swagger-ui</artifactId>-->
+        <!--            <version>${swagger.version}</version>-->
+        <!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-spring-boot-starter -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
@@ -175,11 +174,11 @@
 
 
         <!--            &lt;!&ndash; kaptcha验证码 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>com.github.penggle</groupId>-->
-<!--                <artifactId>kaptcha</artifactId>-->
-<!--                <version>${kaptche.version}</version>-->
-<!--            </dependency>-->
+        <!--            <dependency>-->
+        <!--                <groupId>com.github.penggle</groupId>-->
+        <!--                <artifactId>kaptcha</artifactId>-->
+        <!--                <version>${kaptche.version}</version>-->
+        <!--            </dependency>-->
     </dependencies>
 
     <profiles>
@@ -193,10 +192,10 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-<!--            <build>-->
-<!--                &lt;!&ndash; 产生的构件的文件名 &ndash;&gt;-->
-<!--                <finalName>${project.artifactId}</finalName>-->
-<!--            </build>-->
+            <!--            <build>-->
+            <!--                &lt;!&ndash; 产生的构件的文件名 &ndash;&gt;-->
+            <!--                <finalName>${project.artifactId}</finalName>-->
+            <!--            </build>-->
         </profile>
         <!-- 测试环境 -->
         <profile>
@@ -204,10 +203,10 @@
             <properties>
                 <spring.profiles.active>test</spring.profiles.active>
             </properties>
-<!--            <build>-->
-<!--                &lt;!&ndash; 产生的构件的文件名 &ndash;&gt;-->
-<!--                <finalName>${project.artifactId}</finalName>-->
-<!--            </build>-->
+            <!--            <build>-->
+            <!--                &lt;!&ndash; 产生的构件的文件名 &ndash;&gt;-->
+            <!--                <finalName>${project.artifactId}</finalName>-->
+            <!--            </build>-->
         </profile>
         <!-- 生产环境 -->
         <profile>
@@ -215,10 +214,10 @@
             <properties>
                 <spring.profiles.active>prod</spring.profiles.active>
             </properties>
-<!--            <build>-->
-<!--                &lt;!&ndash; 产生的构件的文件名 &ndash;&gt;-->
-<!--                <finalName>${project.artifactId}</finalName>-->
-<!--            </build>-->
+            <!--            <build>-->
+            <!--                &lt;!&ndash; 产生的构件的文件名 &ndash;&gt;-->
+            <!--                <finalName>${project.artifactId}</finalName>-->
+            <!--            </build>-->
         </profile>
     </profiles>
 
