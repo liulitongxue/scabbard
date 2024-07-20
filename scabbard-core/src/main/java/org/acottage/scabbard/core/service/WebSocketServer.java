@@ -1,6 +1,8 @@
 package org.acottage.scabbard.core.service;
 
 
+import org.springframework.stereotype.Component;
+
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
@@ -15,6 +17,7 @@ import java.io.IOException;
  * @Version 1.0
  */
 @ServerEndpoint("/websocket")
+@Component
 public class WebSocketServer {
 
     @OnOpen
