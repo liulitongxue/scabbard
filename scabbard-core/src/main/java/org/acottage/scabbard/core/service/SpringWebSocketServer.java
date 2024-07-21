@@ -18,7 +18,7 @@ import java.io.IOException;
  */
 @ServerEndpoint("/websocket")
 @Component
-public class WebSocketServer {
+public class SpringWebSocketServer {
 
     @OnOpen
     public void onOpen(Session session) {

@@ -1,5 +1,8 @@
 server:
   port: 11301
+netty:
+  server:
+    port: 11303
 
 spring:
   application:

@@ -26,7 +26,7 @@ management:
 swagger:
   show: true
 cxf:
-  path: /scabbard
+  path: /cxf
   jaxrs:
     component-scan: true
 
