@@ -1,4 +1,4 @@
-package org.acottage.scabbard.core.service;
+package org.acottage.scabbard.core.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -12,6 +12,7 @@ import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
+import org.acottage.scabbard.core.handler.NettyWebSocketHandler;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -28,7 +29,7 @@ import java.util.concurrent.CompletableFuture;
 @Component
 public class NettyWebSocketServer {
 
-    @Value("${netty.server.port:}")
+    @Value("${netty.server.port.websocket:}")
     private Integer port;
 
 
@@ -56,7 +57,7 @@ public class NettyWebSocketServer {
                                 ch.pipeline().addLast(new HttpObjectAggregator(65536));
                                 ch.pipeline().addLast(new ChunkedWriteHandler());
                                 ch.pipeline().addLast(new WebSocketServerProtocolHandler("/nettywebsocket"));
-                                ch.pipeline().addLast(new WebSocketServerHandler());
+                                ch.pipeline().addLast(new NettyWebSocketHandler());
                             }
                         })
                         .option(ChannelOption.SO_BACKLOG, 128)

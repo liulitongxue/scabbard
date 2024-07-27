@@ -2,7 +2,10 @@ server:
   port: 11302
 netty:
   server:
-    port: 11303
+    port:
+      websocket: 11304
+      tcp: 11306
+      udp: 11308
 
 spring:
   application:

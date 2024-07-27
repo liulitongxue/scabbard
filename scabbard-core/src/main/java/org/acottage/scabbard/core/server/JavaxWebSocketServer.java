@@ -1,4 +1,4 @@
-package org.acottage.scabbard.core.service;
+package org.acottage.scabbard.core.server;
 
 
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ import java.io.IOException;
  */
 @ServerEndpoint("/websocket")
 @Component
-public class SpringWebSocketServer {
+public class JavaxWebSocketServer {
 
     @OnOpen
     public void onOpen(Session session) {

@@ -1,4 +1,4 @@
-package org.acottage.scabbard.core.service;
+package org.acottage.scabbard.core.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -11,7 +11,7 @@ import io.netty.handler.codec.http.websocketx.WebSocketFrame;
  * @Date 2024年7月21日 下午1:00
  * @Version 1.0
  */
-public class WebSocketServerHandler extends SimpleChannelInboundHandler<WebSocketFrame> {
+public class NettyWebSocketHandler extends SimpleChannelInboundHandler<WebSocketFrame> {
 
 
     @Override

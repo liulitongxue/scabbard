@@ -1,6 +1,6 @@
 package org.acottage.scabbard.admin;
 
-import org.acottage.scabbard.core.service.NettyWebSocketServer;
+import org.acottage.scabbard.core.server.NettyWebSocketServer;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
